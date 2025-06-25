@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>Architecture Equipement</h1>
+    </header>
+    <main>
+        <form method='post'>
+            <h2>Equipement</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th><label for="name_equipment">Nom</label></th>
+                        <th><label for="key1_equipment">Clé 1 - Catégorie</label></th>
+                        <th><label for="key2_equipment">Clé 2 - Niveau RCC-MRx</label></th>
+                        <th><label for="key3_equipment">Clé 3 - Type</label></th>
+                        <th><label for="key4_equipment">Clé 4 - Matériel catalogue</label></th>
+                        <th><label for="key5_equipment">Clé 5 - Soumis ESP/ESPN</label></th>
+                        <th><label for="material_equipment">Matériau</label></th>
+                    </tr>
+                </thead>
+                <tbody id="equipment_table">
+                    <tr>
+                        <td><input type="text" name="name_equipment" placeholder="Nom de l'équipement" required></td>
+                        <td><select name="category_equipment" id="key1_equipment" required>
+                            <option value="" selected>-- Sélectionnez une option --</option>
+                            <option value="reactor_equipment_and_auxiliaries">Matériel du réacteur et de ses auxiliaires</option>
+                            <option value="control_handling_mechanism">Matériel des mécanismes de contrôle ou de manutention</option>
+                            <option value="irradiation_device">Matériel des dispositifs d'irradiation</option></select>
+                        </td>
+                        <td><select name="rccmrx_equipment" id="key2_equipment" required>
+                            <option value="" selected>-- Sélectionnez une option --</option>
+                            <option value="N1Rx">N1Rx</option>
+                            <option value="N2Rx">N2Rx</option>
+                            <option value="N3Rx">N3Rx</option></select>
+                            </input>
+                        <td><select name="type_equipment" id="key3_equipment" required>
+                            <option value="" selected>-- Sélectionnez une option --</option>
+                            <option>Coques-réservoirs-récipients-cuves</option>
+                            <option>Pompes</option>
+                            <option>Robinets-vannes</option>
+                            <option>Tuyauteries</option>
+                            <option>Soufflets</option>
+                            <option>Structures caissonnées</option>
+                            <option>Echangeurs</option></select>
+                            </input>
+                        </td>
+                        <td><select name="catalogue_equipment" id="key4_equipment" required>
+                            <option value="" selected>-- Sélectionnez une option --</option>
+                            <option value="True">Oui (si dispositif d'irradiation ou N3Rx)</option>
+                            <option value="False">Non</option></select>
+                            </input>
+                        </td>
+                        <td><select name="esp_espn_equipment" id="key5_equipment" required>
+                            <option value="" selected>-- Sélectionnez une option --</option>
+                            <option value="True">Oui</option>
+                            <option value="False">Non</option></select>
+                            </input>
+                        </td>
+                        <td><input type='text' name="material_equipment" placeholder="Matériau"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Composants (optionnel)</h2>
+            <table>
+                <tbody id="component_table">
+                    <tr hidden>
+                        <td><input type="text" name="name_component" placeholder="Nom" required></td>
+                        <td><select name="category_component" id="key1_component" required>
+                                <option value="" selected>-- Sélectionnez une option --</option>
+                                <option value="reactor_equipment_and_auxiliaries">Matériel du réacteur et de ses auxiliaires</option>
+                                <option value="control_handling_mechanism">Matériel des mécanismes de contrôle ou de manutention</option>
+                                <option value="irradiation_device">Matériel des dispositifs d'irradiation</option>
+                            </select>
+                        </td>
+                        <td><select name="rccmrx_component" id="key2_component" required>
+                                <option value="" selected>-- Sélectionnez une option --</option>
+                                <option value="N1Rx">N1Rx</option>
+                                <option value="N2Rx">N2Rx</option>
+                                <option value="N3Rx">N3Rx</option>
+                            </select>
+                            </input>
+                        <td><select name="type_component" id="key3_component" required>
+                                <option value="" selected>-- Sélectionnez une option --</option>
+                                <option>Coques-réservoirs-récipients-cuves</option>
+                                <option>Pompes</option>
+                                <option>Robinets-vannes</option>
+                                <option>Tuyauteries</option>
+                                <option>Soufflets</option>
+                                <option>Structures caissonnées</option>
+                                <option>Echangeurs</option>
+                                <option>Eléments filetés</option>
+                                <option>Autre</option>
+                            </select>
+                            </input>
+                        </td>
+                        <td><select name="catalogue_component" id="key4_component" required>
+                                <option value="" selected>-- Sélectionnez une option --</option>
+                                <option value="True">Oui (si dispositif d'irradiation ou N3Rx)</option>
+                                <option value="False">Non</option>
+                            </select>
+                            </input>
+                        </td>
+                        <td><select name="esp_espn_component" id="key5_component" required>
+                                <option value="" selected>-- Sélectionnez une option --</option>
+                                <option value="True">Oui</option>
+                                <option value="False">Non</option>
+                            </select>
+                            </input>
+                        </td>
+                        <td><input type='text' name="material_component" placeholder="Matériau"></td>
+                        <td><button type="button" onclick="delete_row(this)">Supprimer</button></td>
+                    </tr>
+                </tbody>
+                <button type="button" onclick="add_row()">Ajouter un composant</button>
+            </table>
+            <input type="submit" value="Envoyer">
+        </form>
+    </main>
+    <footer>RCC-MRx Edition 2018</footer>
+</body>
+</html>
+
+<script>
+    
+    var table_component = document.getElementById('component_table');
+
+    function add_row() {
+        var row=table_component.rows[0].cloneNode(true);
+        row.removeAttribute('hidden');
+        table_component.appendChild(row);
+    }
+
+    function delete_row(button) {
+            var row = button.parentNode.parentNode;
+            table_component.removeChild(row);
+        }
+
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <main>
+        <form action="{{ url_for('architecture') }}" method='post'>
+            <label for="type_material">Type de matériel:</label>
+            <select type="" name="type_material" id="type_material" required>
+                <option value="" selected>-- Sélectionnez un type --</option>
+                <option value="equipment">Equipement</option>
+                <option value="support">Support</option>
+            </select>
+        <input type="submit" value="Envoyer">
+        </form>
+    </main>
+    <footer>RCC-MRx Edition 2018</footer>
+</body>
+</html>
